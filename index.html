@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraná Agro Potência | Dados e Indicadores do Agronegócio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="accessibility-bar" role="complementary" aria-label="Controles de Acessibilidade">
+        <div class="container accessibility-container">
+            <span class="accessibility-label">Acessibilidade:</span>
+            <button id="btn-font-decrease" class="acc-btn" aria-label="Diminuir texto">A-</button>
+            <button id="btn-font-increase" class="acc-btn" aria-label="Aumentar texto">A+</button>
+            <button id="btn-contrast" class="acc-btn" aria-label="Alternar Alto Contraste">
+                <span class="icon">◑</span> Alto Contraste
+            </button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <strong>PR<span>AGRO</span></strong>
+            </div>
+            <nav class="nav-menu" aria-label="Navegação Principal">
+                <a href="#indicadores">Indicadores</a>
+                <a href="#mapa-interativo">Mapa Produtivo</a>
+                <a href="#destaques">Destaques</a>
+                <a href="#faq">Perguntas Frequentes</a>
+            </nav>
+            <a href="#download" class="cta-button cta-nav">Baixar Relatório Completo</a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Indicadores Atualizados 2026</span>
+                <h1>O Alvo do Crescimento Conecta o Solo Paranaense ao Mundo</h1>
+                <p>O Paraná consolida sua posição como o celeiro sustentável do Brasil. Acesse dados demográficos, produtividade por município e inteligência de mercado para investidores e produtores.</p>
+                <div class="hero-actions">
+                    <a href="#mapa-interativo" class="cta-button">Explorar Mapa Interativo</a>
+                    <a href="#indicadores" class="secondary-button">Ver Indicadores</a>
+                </div>
+            </div>
+            <div class="hero-stats-grid">
+                <div class="stat-card">
+                    <h3>+20%</h3>
+                    <p>Participação no VBP Nacional</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2º Maior</h3>
+                    <p>Produtor de Grãos do País</p>
+                </div>
+                <div class="stat-card">
+                    <h3>1º Lugar</h3>
+                    <p>Em Sustentabilidade Ambiental</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="indicadores" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Força Econômica em Números</h2>
+                <p>O desempenho das principais cadeias produtivas que movem a economia do estado.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="info-card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Complexo Soja</h3>
+                    <p>Liderança consolidada em produtividade por hectare, impulsionada por tecnologias de precisão e cooperativismo forte.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🍗</div>
+                    <h3>Proteína Animal</h3>
+                    <p>Maior exportador de carne de frango do Brasil, atendendo aos mais rigorosos padrões sanitários internacionais.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌽</div>
+                    <h3>Milho Segunda Safra</h3>
+                    <p>Base estratégica para a verticalização da indústria de proteína e biocombustíveis no território estadual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mapa-interativo" class="map-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mapa Interativo de Polos Produtores</h2>
+                <p>Clique nas macrorregiões polo no mapa para visualizar a especialidade agrícola e os dados de rendimento de cada município-sede.</p>
+            </div>
+            <div class="map-layout">
+                <div class="map-container">
+                    <svg id="parana-map" viewBox="0 0 800 450" width="100%" height="auto" aria-label="Mapa do Paraná com polos clicáveis">
+                        <path d="M50,150 L200,80 L450,70 L700,120 L780,220 L680,380 L400,420 L250,380 L100,320 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3" />
+                        
+                        <path id="region-cascavel" class="map-region" d="M50,150 L200,140 L180,300 L100,320 Z" fill="#34d399" />
+                        <path id="region-londrina" class="map-region" d="M380,73 L550,85 L520,180 L350,160 Z" fill="#60a5fa" />
+                        <path id="region-maringa" class="map-region" d="M200,80 L380,73 L350,160 L200,140 Z" fill="#fbbf24" />
+                        <path id="region-pontagrossa" class="map-region" d="M350,160 L520,180 L600,300 L450,340 Z" fill="#f87171" />
+                        <path id="region-guarapuava" class="map-region" d="M180,300 L350,160 L450,340 L250,380 Z" fill="#a78bfa" />
+
+                        <circle cx="130" cy="220" r="10" class="map-marker" data-region="cascavel" />
+                        <text x="130" y="245" class="map-label">Cascavel</text>
+
+                        <circle cx="440" cy="125" r="10" class="map-marker" data-region="londrina" />
+                        <text x="440" y="150" class="map-label">Londrina</text>
+
+                        <circle cx="290" cy="115" r="10" class="map-marker" data-region="maringa" />
+                        <text x="290" y="140" class="map-label">Maringá</text>
+
+                        <circle cx="510" cy="240" r="10" class="map-marker" data-region="pontagrossa" />
+                        <text x="510" y="265" class="map-label">Ponta Grossa</text>
+
+                        <circle cx="330" cy="280" r="10" class="map-marker" data-region="guarapuava" />
+                        <text x="330" y="305" class="map-label">Guarapuava</text>
+                    </svg>
+                </div>
+                
+                <div class="map-info-panel" id="info-panel">
+                    <div id="panel-placeholder">
+                        <p class="panel-hint">💡 Selecione uma região ou município no mapa ao lado para detalhar os dados de produção de alta relevância.</p>
+                    </div>
+                    <div id="panel-content" class="hidden">
+                        <span class="panel-badge">Dados Regionais</span>
+                        <h3 id="info-title">Nome do Município / Polo</h3>
+                        <div class="panel-stat">
+                            <span class="stat-label">Principal Cultura:</span>
+                            <span id="info-culture" class="stat-value">-</span>
+                        </div>
+                        <div class="panel-stat">
+                            <span class="stat-label">VBP Estimado:</span>
+                            <span id="info-vbp" class="stat-value">-</span>
+                        </div>
+                        <div class="panel-stat">
+                            <span class="stat-label">Destaque Logístico:</span>
+                            <span id="info-logistics" class="stat-value">-</span>
+                        </div>
+                        <p id="info-description">Descrição detalhada do potencial produtivo regional.</p>
+                        <a href="#download" class="cta-button button-full">Solicitar Relatório Destesta Região</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destaques" class="section-padding testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vozes do Campo Paranaense</h2>
+                <p>Quem transforma tecnologia e terra em referência internacional de produtividade.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    </div>
+                <div class="carousel-controls">
+                    <button id="carousel-prev" class="carousel-arrow" aria-label="Depoimento anterior">❮</button>
+                    <button id="carousel-next" class="carousel-arrow" aria-label="Próximo depoimento">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes sobre o Setor</h2>
+                <p>Esclareça as principais dúvidas institucionais sobre investimentos, sustentabilidade e escoamento.</p>
+            </div>
+            <div class="accordion-wrapper" id="faq-accordion">
+                </div>
+        </div>
+    </section>
+
+    <footer id="download" class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h2>Pronto para mitigar riscos e investir no ecossistema de maior retorno do país?</h2>
+                <p>Baixe agora a análise de safra completa e detalhada de todos os 399 municípios do Paraná.</p>
+                <form class="footer-form" onsubmit="event.preventDefault(); alert('Relatório enviado para o e-mail informado com sucesso!');">
+                    <input type="email" placeholder="Seu melhor e-mail corporativo" required aria-label="E-mail corporativo">
+                    <button type="submit" class="cta-button">Baixar PDF Completo</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PRAGRO Inteligência Setorial. Todos os direitos reservados. Dados baseados no SEAB/DERAL.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
