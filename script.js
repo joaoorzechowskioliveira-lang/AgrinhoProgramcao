@@ -37,8 +37,15 @@ const mapaDados = {
     }
 };
 
-const depoimentos = [
-    { texto: "O Paraná dita o ritmo da tecnologia aplicada ao campo hoje no país.", autor: "Ricardo Albuquerque, Diretor da AgTech Sul" },
+const imagens = [
+    {
+        src: './img/campo1.png',
+        alt: 'Campo de soja no Paraná',
+        title: 'Campo de soja',
+        description: 'A soja é um dos mais importantes produtos que o Paraná produz.'
+
+
+     },
     { texto: "Nossa integração cooperativa no oeste paranaense nos permite competir no topo do mercado europeu.", autor: "Mariana Schmidt, Produtora de Grãos e Associada" },
     { texto: "A infraestrutura logística moderna e o suporte de inteligência do estado blindam nossa competitividade.", autor: "Carlos Mendes, Investidor do Agro Internacional" }
 ];
@@ -92,11 +99,11 @@ markers.forEach(el => {
     });
 });
 
-// Renderização e Controle do Carrossel (Depoimentos)
+// Renderização e Controle do Carrossel (Imagens)
 const track = document.getElementById('carousel-track');
 let carouselIndex = 0;
 
-depoimentos.forEach(d => {
+imagens.forEach(d => {
     const item = document.createElement('div');
     item.className = 'carousel-item';
     item.innerHTML = `<p class="carousel-quote">"${d.texto}"</p><p class="carousel-author">— ${d.autor}</p>`;
@@ -108,12 +115,12 @@ function moverCarrossel() {
 }
 
 document.getElementById('carousel-next').addEventListener('click', () => {
-    carouselIndex = (carouselIndex + 1) % depoimentos.length;
+    carouselIndex = (carouselIndex + 1) % imagens.length;
     moverCarrossel();
 });
 
 document.getElementById('carousel-prev').addEventListener('click', () => {
-    carouselIndex = (carouselIndex - 1 + depoimentos.length) % depoimentos.length;
+    carouselIndex = (carouselIndex - 1 + imagens.length) % imagens.length;
     moverCarrossel();
 });
 
