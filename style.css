@@ -336,7 +336,7 @@ body.high-contrast a, body.high-contrast button {
     transition: var(--transition);
 }
 
-.map-marker:hover {
+.map-marker:hover, .map-marker.active {
     fill: var(--primary);
 }
 
